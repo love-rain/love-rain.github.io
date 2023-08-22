@@ -4,10 +4,13 @@
 
 <body data-gr-c-s-loaded="true">
 <script type="text/javascript">
-  const searchUrl = new URLSearchParams(window.location.search)
-  const myParam = searchUrl.get('recommendId');
-  console.log(myParam);
-    // window.location = 'https://khanhmlhd.github.io/store';
+  new Promise((resolve)=>{
+    const searchUrl = new URLSearchParams(window.location.search)
+    const myParam = searchUrl.get('recommendId');
+    resolve(myParam)
+  }).then((id)=>{
+    window.location = `https://khanhmlhd.github.io/store?recommendId=${id}`;
+  })
 </script>
 </body>
 
